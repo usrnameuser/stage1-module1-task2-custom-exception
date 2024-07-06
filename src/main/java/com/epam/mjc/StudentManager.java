@@ -1,13 +1,17 @@
 package com.epam.mjc;
 
+import java.lang.IllegalArgumentException;
 
 public class StudentManager {
 
   private static final long[] IDs = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
 
-  public Student find(long studentID) {
-    throw new CustomException(studentID);
-    return Student.getValueOf(studentID);
+  public Student find(long studentID) {    
+    try {
+      return Student.getValueOf(studentID);
+    } catch(IllegalArgumentException illegalArgumentException) {
+        throw new CustomException(studentID);
+    }
   }
 
   public static void main(String[] args) {

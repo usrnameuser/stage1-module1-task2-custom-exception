@@ -11,8 +11,7 @@ public class StudentManager {
     try {  
       student = Student.getValueOf(studentID);
     } catch(IllegalArgumentException illegalArgumentException) {
-        //throw new CustomException(studentID);
-        throw new CustomException();
+        throw new CustomException(studentID);
     }
     return student;
   }

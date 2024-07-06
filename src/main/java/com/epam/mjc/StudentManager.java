@@ -10,6 +10,7 @@ public class StudentManager {
     Student student;
     try {  
       student = Student.getValueOf(studentID);
+      //return student;
     } catch(IllegalArgumentException illegalArgumentException) {
         throw new CustomException(studentID);
     }
